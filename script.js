@@ -27,7 +27,7 @@ function handleSubmit(event) {
   
   <h4>Resultados</h4>
   
-  <div class="result-content">
+  <div class="result-content text-dark">
     <ul>
       <li>
         Su metabolismo basal es de <strong>${tmb} calorias</strong>.
