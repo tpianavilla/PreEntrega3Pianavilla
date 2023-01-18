@@ -2,7 +2,7 @@ const form = document.getElementById('form');
 
 form.addEventListener('submit', handleSubmit);
 
- 
+
 function handleSubmit(event) {
   event.preventDefault();
 
@@ -54,7 +54,7 @@ function handleSubmit(event) {
 let recomendaciones = document.getElementById("recomendaciones")
 
 
-const weightLossMacros = { proteina: "2.5-3g por kg de peso corporal.", grasas: "minimo 1g por kg de peso corporal", hidratos: "una vez definida la proteina y la grasa, las kcal restantes pueden provenir de carbohidratos"}
+const weightLossMacros = { proteina: "2.5-3g por kg de peso corporal,", grasas: "minimo 1g por kg de peso corporal", hidratos: "una vez definida la proteina y la grasa, las kcal restantes pueden provenir de CARBOHIDRATOS."}
 localStorage.setItem("weightLossMacros", JSON.stringify(weightLossMacros));
 
 function saveName(){
@@ -66,7 +66,7 @@ function tips(){
     var macros =  localStorage.getItem('weightLossMacros')
     var user = localStorage.getItem('usuario')
     macros = JSON.parse(macros)
-    return recomendaciones.innerHTML = user.toUpperCase() + ' te recomendamos la siguiente proporcion de macros: proteinas ' + macros.proteina + ' De grasas ' + macros.grasas + ' y ' + macros.hidratos
+    return recomendaciones.innerHTML = user.toUpperCase() + ', nuestra recomendacion de macros es la siguiente: PROTEINA ' + macros.proteina + ' de GRASAS ' + macros.grasas + ' y ' + macros.hidratos
   }
 
 
