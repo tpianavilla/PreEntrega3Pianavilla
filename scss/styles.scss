@@ -1,0 +1,112 @@
+$color-hover:grey;
+$background-alternativo: rgb(62,62,62);
+$color-texto: white;
+
+body { 
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-size: larger !important;
+    overflow-x: hidden;
+    color: $color-texto !important;
+    a {
+        text-decoration: none !important;
+        color: $color-texto !important;
+}
+}
+
+
+section {
+    animation: fadeIn 2.5s ease !important; 
+      
+        
+}
+
+div {
+    img { animation: fadeIn 2.5s ease !important;
+    }
+}
+
+ul { 
+    li  { color: white; 
+        &:hover {
+
+        background-color: $color-hover!important;
+        
+    }
+    
+          
+    }
+
+}
+.carousel-inner {
+    max-height: 37rem;
+}
+#contenedor-menu {
+    justify-content: center !important;
+    
+    justify-items: center !important;
+}
+#miniaturas {
+    background-color: $background-alternativo;
+}
+#inicio { font-weight: normal !important;
+  
+    
+    
+     &:hover {
+    background-color: $color-hover;
+    text-decoration: none;
+    
+}
+}
+#contenedor-form {
+    align-items: center;
+    justify-content: center;
+    background-color: $background-alternativo;
+    border-radius: 5px;
+
+}
+
+#imagenContacto {
+
+    width: 100%;
+    max-height: 37rem !important;
+}
+
+#texto {
+    margin: 15px !important;
+    
+}
+@media (max-width: 768px) {
+    #intro {
+        width: 90% !important;
+    }
+
+
+    .tablas {
+        width: 100% !important;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .wrapicon {
+
+        justify-content: center !important;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        filter: brightness(1) blur(20px)
+    }
+
+    10% {
+        opacity: 1;
+        filter: brightness(2) blur(10px)
+    }
+
+    100% {
+        opacity: 1;
+        filter: brightness(1) blur(0)
+    }
+}

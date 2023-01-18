@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lightweight - Entrenamiento</title>
+    <meta name="description"
+    content="Informacion y tips sobre entrenamiento y nutricion. Bases del entrenamiento en el gimnasio.">
+    <meta name="keywords" content="ENTRENAMIENTO, NUTRICION, FITNESS, PESAS, GIMNASIO, LIGHTWEIGHT, PRINCIPIANTES, CONSEJOS">
+    <link rel="icon" type="image/x-icon" href="./resources/dumbell.png">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+      </style>
+  </head>
+  <body class="bg-dark">
+    <header class="bg-dark text-white d-flex align-items-center justify-content-center border-bottom">
+      <span
+        ><a href="./index.html"
+          ><img src="./resources/dumbell.png" alt="logo"></a
+      ></span>
+     <a href="index.html"><h1 class="p-3 fs-2">Lightweight</h1></a> 
+    </header>
+<!--NAVBAR-->
+    <section class="d-flex align-items-center justify-content-center" id="contenedor-menu">
+        <nav class="navbar navbar-expand-lg bg-dark p-3">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"
+              ><span class="text-light fs-5 fw-bold p-2" id="inicio">Inicio</span></a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="nutricion.html"
+                    >Nutricion</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="entrenamiento.html"
+                    >Entrenamiento</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="influencers.html">Influencers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="contacto.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="calculadora.html">Calculadora</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </section>
+<!--CARRUSEL DE IMAGENES DE LA SECCION-->
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./resources/imagenesEntrenamiento/pexels-victor-freitas-703012.jpg"
+            class="d-block w-100"
+            alt="imagen entrenamiento"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./resources/imagenesEntrenamiento/pexels-victor-freitas-703016.jpg"
+            class="d-block w-100"
+            alt="imagen entrenamiento2"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./resources/imagenesEntrenamiento/pexels-victor-freitas-841131.jpg"
+            class="d-block w-100"
+            alt="imagen entrenamiento3"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+<!--INTRODUCCION-->
+    <section
+      class="w-75 mx-auto text-center text-white bg-dark pt-5 border-bottom mb-4"
+      id="intro"
+    >
+      <h2 class="p-3 fs-2">Entrenamiento</span></h2>
+      <span id="texto" class="text-white pt-5 p-5 fs-6">
+        <p> 
+          El entrenamiento otorga beneficios siempre y cuando este esté bien ejecutado y se mantenga en el tiempo, estas consideraciones son muy relevantes, 
+          ya que de ignorarlas podemos terminar perjudicando nuestra salud y/o no obteniendo los resultados deseados.
+        </p>
+      </span>
+    </section>
+<!--CUERPO DEL ARTICULO-->
+    <section class="container-fluid">
+        <div class="row w-75 mx-auto" id="miniaturas">
+            <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 wrapicon pt-5">
+            <img
+              src="./resources/entrenamientoIcon.png"
+              alt="entrenamientoIcon"
+              width="60"
+              height="40"
+            />
+            <p class="px-4">
+              Hay que tener claro que no vale únicamente con ir al gimnasio, sino que también es importante lo que hacemos cuando estamos entrenando,
+               lo más importante es expresar intensidad en cada serie, cada repetición, trabajando cerca del fallo muscular, es decir,
+                cuando ya no somos capaces de ejecutar el movimiento correctamente (llamado fallo técnico) o cuando no podemos mover el peso de ninguna forma (fallo total). 
+                Este método es la vía más simple para aplicar tensión mecánica sobre las fibras musculares, siendo este el estímulo más eficiente a la hora de crear masa muscular. 
+
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 wrapicon  pt-5">
+            <img
+              src="./resources/entrenamientoIcon.png"
+              alt="entrenamientoIcon"
+              width="60"
+              height="40"
+            />
+            <p class="px-4">
+              También tenemos que tener presente que el cuerpo humano se adapta a (casi) todo, por lo cual la carga con la que alcanzamos el fallo hoy probablemente no sea suficiente 
+              para hacerlo en 3 o 4 meses, debido a esto es importante la sobrecarga progresiva, es decir, que entrenamiento a entrenamiento busquemos hacer más que el anterior, 
+              ya sea 1 repetición más, o 0.25kg más en la barra, todo sirve para maximizar el estímulo.
+
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 wrapicon border-top pt-5">
+            <img
+              src="./resources/entrenamientoIcon.png"
+              alt="entrenamientoIcon"
+              width="60"
+              height="40"
+            />
+            <p class="px-4">
+              La única forma de cerciorarnos de que estamos realizando una sobrecarga progresiva efectiva es siendo conscientes de lo que hacemos sesión a sesión,
+               por esto es muy recomendable llevar un diario de entrenamiento, puede ser en papel, en las notas del teléfono móvil, 
+               o en cualquier medio que te permita llevar un registro de los pesos y repeticiones que estás haciendo. 
+
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 wrapicon border-top pt-5">
+              <img
+                src="./resources/entrenamientoIcon.png"
+                alt="entrenamientoIcon"
+                width="60"
+                height="40"
+              />
+              <p class="px-4">
+                Debemos comprender que en el entrenamiento con cargas más no es mejor, incluso más puede llegar a ser perjudicial. Es imperante respetar los periodos de recuperación,
+                 que es cuando el cuerpo utiliza los nutrientes que le otorgamos para crear adaptaciones neurológicas y musculares.
+                 Lo recomendable es respetar el máximo de 20 series efectivas semanales por grupo muscular (en el caso de grupos grandes) y en músculos pequeños 10-12 series
+                efectivas semanales. Por serie efectiva entendemos aquellas series que están cerca del fallo, sin contar el calentamiento específico previo. 
+
+              </p>
+            </div>
+        </div>
+      </section>
+   
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+<!--FOOTER--> 
+    <footer class="w-100 d-flex align-items justify-content-around bg-dark border-top">
+
+        <p class="my-4">Icons made by Freepik from <a href="https://www.flaticon.com" target="_blank">www.flaticon.com</a></p>
+        <div class="my-3">Developer: <a href="https://www.linkedin.com/in/tom%C3%A1s-pianavilla/" target="_blank"><img class="mx-1" src="./resources/linkedin-logo.png" alt="linkedin-logo" width="30%" height="40"></a></div>
+      </footer>
+  </body>
+</html>

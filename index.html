@@ -1,67 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lightweight</title>
-    <link rel="stylesheet" href="./styles.css">
-    <style> @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap'); </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
-<body class="bg-secondary-subtle">
-    <div class="container">
-    
-
-    <div class="content">
-      <form id="form">
-        <h1 class="display-1 mb-4">Lightweight</h1>
-        <div class="form-group mb-3">
-            <label for="name" class="form-label">Ingrese su nombre</label>
-            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese su nombre aqui.">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lightweight - Inicio</title>
+    <meta name="description"
+    content="Informacion y tips sobre entrenamiento y nutricion. Bases del entrenamiento en el gimnasio.">
+    <meta name="keywords" content="ENTRENAMIENTO, NUTRICION, FITNESS, PESAS, GIMNASIO, LIGHTWEIGHT, PRINCIPIANTES, CONSEJOS">
+    <link rel="icon" type="image/x-icon" href="./resources/dumbell.png">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+      </style>
+  </head>
+  <body class="bg-dark">
+    <header class="bg-dark d-flex align-items-center justify-content-center border-bottom">
+      <span
+        ><a href="./index.html"
+          ><img src="./resources/dumbell.png" alt="logo" /></a
+      ></span>
+      <a href="index.html"><h1 class="p-3 fs-2">Lightweight</h1></a>
+    </header>
+    <!--NAVBAR-->
+    <section class="d-flex align-items-center justify-content-center" id="contenedor-menu">
+      <nav class="navbar navbar-expand-lg bg-dark p-3 text-center">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"
+            ><span class="text-light fw-bold p-2" id="inicio">Inicio</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="nutricion.html"
+                  >Nutricion</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="entrenamiento.html"
+                  >Entrenamiento</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="influencers.html"
+                  >Influencers</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="calculadora.html">Calculadora</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="form-group mb-3">
-          <label for="gender">Sexo</label>
-          <select id="gender" class="form-select">
-            <option value="male">Masculino</option>
-            <option value="female">Feminino</option>
-          </select>
+      </nav>
+      <!--CARRUSEL DE FOTOS-->
+    </section>
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="resources/imagenesCarrousel/pexels-pixabay-361184.jpg"
+            class="d-block w-100"
+            alt="imagen nutricion"
+          />
         </div>
-        <div class="form-group mb-3">
-          <label for="age" class="form-label">Ingrese su edad.</label>
-          <input type="number" class="form-control" id="age" />
+        <div class="carousel-item">
+          <img
+            src="resources/imagenesCarrousel/pexels-victor-freitas-841130.jpg"
+            class="d-block w-100"
+            alt="imagen entrenamiento"
+          />
         </div>
-        <div class="form-group mb-3">
-          <label for="weight" class="form-label">Ingrese su peso en kilogramos</label>
-          <input type="number" id="weight" class="form-control" placeholder="Kg"/>
-        </div>
-        <div class="form-group mb-3">
-          <label for="height" class="form-label">Ingrese su altura en centimetros</label>
-          <input type="number" class="form-control" id="height" placeholder="Cm"/>
-        </div>
-        <div class="form-group mb-3">
-          <label for="activity_level" class="form-label">Seleccione su nivel de actividad fisica.</label>
-          <select id="activity_level" class="form-select" aria-label="Default select example">
-            <option value="1.2">Sedentario</option>
-            <option value="1.375">Poca actividad</option>
-            <option value="1.55">Actividad moderada</option>
-            <option value="1.725">Actividad intensa</option>
-            <option value="1.9">Actividad muy intensa</option>
-          </select>
-        </div>
-
-        <div class="form-group mb-3">
-          <button type="submit" class="btn btn-secondary">Calcular</button>
-        </div>
-      </form>
-      <div class="result-container mb-3" id="result">
-        </div>
-        <div id="recomendaciones">
-            
+        <div class="carousel-item">
+          <img
+            src="resources/imagenesCarrousel/pexels-tracy-le-blanc-607812.jpg"
+            class="d-block w-100"
+            alt="imagen influencers"
+          />
         </div>
       </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-  </div>
-    <script src="./script.js"></script>
-</body>
+    <!--INTRODUCCION-->
+    <section
+      class="w-75 mx-auto text-center text-white bg-dark pt-5 border-bottom mb-4"
+      
+    >
+      <h2 class="p-3 fs-2">¿Que es <span>Lightweight?</span></h2>
+      <span id="texto" class="text-white pt-5 p-5 fs-6">
+        Lightweight intenta ofrecer a usuarios de gimnasio, ya sean principiantes o intermedios, consejos respecto a la alimentación y entrenamiento para hacer más sencilla y llevadera la iniciación en el mundo del fitness y deportes de fuerza.
+         También compartimos perfiles de influencers que divulgan conocimiento sobre estas temáticas, que pueden ser una gran compañía y motivación en estas instancias iniciales. 
+
+        </p>
+      </span>
+    </section>
+    <!--ARTICULO PRINCIPAL-->
+    <section class="container-fluid">
+      <div class="row w-75 mx-auto d-flex justify-content-around" id="miniaturas">
+        <div
+          class="col-lg-6 col-md-12 col-sm-12 d-flex my-5 wrapicon  pt-5"
+        >
+          <img
+            src="./resources/nutricionIcon.png"
+            alt="nutricionIcon"
+            width="80"
+            height="60"
+          />
+          <p class="px-4">
+            La nutrición es esencial para el rendimiento y recuperación, además de ofrecer una mejora a nivel de calidad de vida y longevidad,
+             en este sitio te daremos consejos para simplificar una tarea a priori difícil, consiguiendo la mayor cantidad de beneficios posibles
+              sin necesidad de volvernos talibanes de la comida saludable.
+          </p>
+        </div>
+        <div
+          class="col-lg-6 col-md-12 col-sm-12 d-flex my-5 wrapicon  pt-5"
+        >
+          <img
+            src="./resources/entrenamientoIcon.png"
+            alt="entrenamientoIcon"
+            width="80"
+            height="60"
+          />
+          <p class="px-4">
+            El entrenamiento otorga beneficios siempre y cuando este esté bien ejecutado y se mantenga en el tiempo, estas consideraciones son muy relevantes,
+             ya que de ignorarlas podemos terminar perjudicando nuestra salud y/o no obteniendo los resultados deseados.
+          </p>
+        </div>
+        <div
+          class="col-lg-6 col-md-12 col-sm-12 d-flex my-5 wrapicon border-top pt-5"
+        >
+          <img
+            src="./resources/influencersIcon.png"
+            alt="influencersIcon"
+            width="80"
+            height="60"
+          />
+          <p class="px-4">
+            Los influencers y divulgadores son una gran compañía para el día a día, con su contenido podemos adquirir nuevas ideas, ya sea de recetas o de rutinas,
+             siendo también una fuente de motivación. Compartimos algunos perfiles que creemos que aportan valor, pero no hay que olvidar que no basta solo con observar, 
+             ¡también hay que ejecutar!
+        </p>
+        </div>
+        <div
+          class="col-lg-6 col-md-12 col-sm-12 d-flex my-5 wrapicon border-top pt-5 ps-2"
+        >
+          <img
+            src="./resources/contactoIcon.png"
+            alt="contactoIcon"
+            width="80"
+            height="60"
+          />
+          <p class="px-4">
+            Los consejos ofrecidos en esta página son meramente orientativos, no son un dogma a seguir y siempre invitamos a que cada individuo realice su propia investigación, 
+            de todas formas, en el caso de que se presenten dudas más puntuales dejamos un formulario de contacto, vía mediante la cual pueden hacernos llegar dichas dudas,
+             las cuales intentaremos solventar a la brevedad.
+
+          </p>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <!--FOOTER-->
+    <footer class="w-100 d-flex align-items justify-content-around bg-dark border-top">
+      <p class="my-4">
+        Icons made by Freepik from
+        <a href="https://www.flaticon.com">www.flaticon.com</a>
+      </p>
+      <div class="my-3">
+        Developer:
+        <a
+          href="https://www.linkedin.com/in/tom%C3%A1s-pianavilla/"
+          target="_blank"
+          ><img
+            class="mx-1"
+            src="./resources/linkedin-logo.png"
+            alt="linkedin-logo"
+            width="30%"
+            height="40"
+        /></a>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lightweight - Nutricion</title>
+    <meta name="description"
+    content="Informacion y tips sobre entrenamiento y nutricion. Bases del entrenamiento en el gimnasio.">
+    <meta name="keywords" content="ENTRENAMIENTO, NUTRICION, FITNESS, PESAS, GIMNASIO, LIGHTWEIGHT, PRINCIPIANTES, CONSEJOS">
+    <link rel="icon" type="image/x-icon" href="./resources/dumbell.png">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+      </style>
+  </head>
+
+  <body class="bg-dark">
+    <header class="bg-dark text-white d-flex align-items-center justify-content-center border-bottom">
+        <span
+          ><a href="./index.html"
+            ><img src="./resources/dumbell.png" alt="logo"></a
+        ></span>
+       <a href="index.html"><h1 class="p-3 fs-2">Lightweight</h1></a> 
+      </header>
+<!--NAVBAR-->
+    <section class="d-flex align-items-center justify-content-center" id="contenedor-menu">
+        <nav class="navbar navbar-expand-lg bg-dark p-3">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"
+              ><span class="text-light fs-5 fw-bold p-2" id="inicio">Inicio</span></a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="nutricion.html"
+                    >Nutricion</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="entrenamiento.html"
+                    >Entrenamiento</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="influencers.html">Influencers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="contacto.html">Contacto</a>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </section>
+<!--CARRUSEL DE FOTOS-->
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./resources/imagenesNutricion/pexels-pixabay-262945.jpg"
+            class="d-block w-100"
+            alt="imagen nutricion"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./resources/imagenesNutricion/pexels-foodie-factor-566566.jpg"
+            class="d-block w-100"
+            alt="imagen nutricion 2"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./resources/imagenesNutricion/pexels-ella-olsson-1640777.jpg"
+            class="d-block w-100"
+            alt="imagen nutricion 3"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+<!--INTRODUCCION-->
+    <section
+      class="w-75 mx-auto text-center text-white bg-dark border-bottom mb-4 pt-5"
+      id="intro"
+    >
+      <h2 class="p-3 fs-2">Nutricion</span></h2>
+      <span class="text-white pt-5 p-5 fs-6">
+        <p>
+          La nutrición es esencial para el rendimiento y recuperación, además de ofrecer una mejora a nivel de calidad de vida y longevidad,
+           en este sitio te daremos consejos para simplificar una tarea a priori difícil, 
+          consiguiendo la mayor cantidad de beneficios posibles sin necesidad de volvernos talibanes de la comida saludable.
+        </p>
+      </span>
+    </section>
+<!--CUERPO DEL ARTICULO-->
+    <section class="container-fluid">
+        <div class="row w-75 mx-auto d-flex justify-content-around" id="miniaturas">
+          <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 wrapicon pt-5">
+            <img
+              src="./resources/nutricionIcon.png"
+              alt="nutricionIcon"
+              width="60"
+              height="40"
+            />
+            <p class="px-4">
+              Lo más importante a la hora de perseguir un objetivo en el gimnasio respecto a la alimentación es el balance calórico, 
+              si buscamos aumentar masa muscular (proceso en el cual también ganaremos algo de grasa) debemos buscar un superávit calórico,
+               es decir, ingerir más calorías de las que gastamos durante un día. En el caso de la pérdida de grasa (proceso en el cual también perderemos algo de  músculo)
+                la situación es la contraria, debemos buscar un déficit calórico, ingiriendo menos calorías de las que gastamos. El quid de la cuestión está en cuanto déficit 
+                o superávit debemos aplicar, normalmente este debería ser de un 30% respecto a las calorías de mantenimiento. Para saber tus calorías de mantenimiento puedes utilizar
+                 calculadoras que hay en internet y en aplicaciones móviles. El método para controlar si el déficit o superávit está siendo excesivo es el peso corporal, si estás 
+                 aumentando más de 750 gramos semanales probablemente estés ganando más grasa de la necesaria, y, de igual forma, si estas bajando más de 750g-1kg  a la semana 
+                 probablemente estemos perdiendo más músculo de lo que deseamos.
+
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 wrapicon pt-5">
+            <img
+              src="./resources/nutricionIcon.png"
+              alt="nutricionIcon"
+              width="60"
+              height="40"
+            />
+            <p class="px-4">
+              No solo importa cuantas calorías comemos, también importa de donde provienen ya sean grasas (necesarias para funciones hormonales y cerebrales), 
+              proteínas (necesarias para la recuperación de tejidos y creación de nuevo músculo) o carbohidratos (principal fuente de energía), 
+              lo recomendable para una persona que realiza entrenamientos de fuerza es mantener 1/1.2g de grasa por kg de peso corporal (como mínimo en definición),
+               2/2.5g de proteína por kg de peso corporal (como mínimo, sin exceder los 3/3.5g) y, en el caso de los carbohidratos no es necesario mantener un mínimo,
+               podemos utilizar la cantidad que sea necesaria para alcanzar nuestras necesidades calóricas siempre y cuando respetemos las cantidades a ingerir de grasas y proteínas
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 wrapicon border-top pt-5">
+            <img
+              src="./resources/nutricionIcon.png"
+              alt="nutricionIcon"
+              width="60"
+              height="40"
+            />
+            <p class="px-4">
+              No todos los alimentos son igual de saciantes, es importante saber elegir comidas que sacian mucho (si nuestra intención es bajar de peso) 
+              o elegir comidas poco saciantes (si nuestra intención es aumentar de peso). Esto permitirá hacer más amenos ambos procesos, facilitándonos el alcanzar nuestro objetivo.
+
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 wrapicon border-top pt-5">
+              <img
+                src="./resources/nutricionIcon.png"
+                alt="nutricionIcon"
+                width="60"
+                height="40"
+              />
+              <p class="px-4">
+                Hay que tener presente que el cuerpo no entiende lo que es un dia, por lo que sí debido a algún inconveniente no podemos llegar a nuestra ingesta calórica,
+                 o nos pasamos, siempre podemos corregir en los días siguientes, lo importante al fin y al cabo es el balance semanal, esto nos permite tener ciertos días de 
+                 mayor ingesta y otros de menor, pudiendo distribuirlos a conveniencia de nuestro ritmo de vida.
+
+              </p>
+            </div>
+        </div>
+      </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+<!--FOOTER-->
+    <footer class="w-100 d-flex align-items justify-content-around bg-dark border-top">
+
+        <p class="my-4">Icons made by Freepik from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
+        <div class="my-3">Developer: <a href="https://www.linkedin.com/in/tom%C3%A1s-pianavilla/" target="_blank"><img class="mx-1" src="./resources/linkedin-logo.png" alt="linkedin-logo" width="30%" height="40"></a></div>
+      </footer>
+  </body>
+</html>
