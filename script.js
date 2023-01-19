@@ -44,8 +44,20 @@ function handleSubmit(event) {
 
   const result = document.getElementById("result");
   result.innerHTML = layout;
+
   saveName();
+
   tips();
+
+  if (weight < 0 || height < 0 || age < 0) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Algun valor de los ingresados es incorrecto.",
+      footer:
+        "Peso, edad y altura deben ser ingresados como un numero mayor a 0.",
+    });
+  }
 }
 
 let recomendaciones = document.getElementById("recomendaciones");
@@ -95,9 +107,13 @@ fetch("./exercises.json")
     (ejercicio) =>
       (ejerciciosRecomendados.innerHTML =
         ejRecomendado +
-        JSON.stringify(ejercicio[0].nombre) + ", " +
-        JSON.stringify(ejercicio[1].nombre) + ", " +
-        JSON.stringify(ejercicio[2].nombre) + ", " +
-        JSON.stringify(ejercicio[3].nombre) + " y " +
+        JSON.stringify(ejercicio[0].nombre) +
+        ", " +
+        JSON.stringify(ejercicio[1].nombre) +
+        ", " +
+        JSON.stringify(ejercicio[2].nombre) +
+        ", " +
+        JSON.stringify(ejercicio[3].nombre) +
+        " y " +
         JSON.stringify(ejercicio[4].nombre))
   );
