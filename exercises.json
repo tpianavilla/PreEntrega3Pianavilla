@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "nombre":"Press Banca",
+        "musculo": "Pecho - Hombro - Triceps"
+    },
+    {
+        "id":2,
+        "nombre":"Peso Muerto",
+        "musculo": "Gluteos - Femoral - Erectores espinales"
+    },
+    {
+        "id":3,
+        "nombre":"Sentadilla",
+        "musculo": "Gluteos - Cuadriceps"
+    },
+    {
+        "id":4,
+        "nombre":"Press Militar",
+        "musculo": "Trapecio - Hombro - Triceps"
+    }, 
+    {
+        "id":5,
+        "nombre":"Dominadas",
+        "musculo": "Espalda - Biceps"
+    }
+]

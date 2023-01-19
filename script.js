@@ -1,23 +1,20 @@
-const form = document.getElementById('form');
+const form = document.getElementById("form");
 
-form.addEventListener('submit', handleSubmit);
-
+form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
 
-  
-  let gender = getInputNumberValue('gender');
-  let age = getInputNumberValue('age');
-  let weight = getInputNumberValue('weight');
-  let height = getInputNumberValue('height');
-  let activityLevel = getInputNumberValue('activity_level');
-
+  let gender = getInputNumberValue("gender");
+  let age = getInputNumberValue("age");
+  let weight = getInputNumberValue("weight");
+  let height = getInputNumberValue("height");
+  let activityLevel = getInputNumberValue("activity_level");
 
   const tmb = Math.round(
-    gender === 'female'
-      ? (655 + (9.6 * weight) + (1.8 * height) - (4.7 * age))
-      : (66 + (13.7 * weight) + (5 * height) - (6.8 * age))
+    gender === "female"
+      ? 655 + 9.6 * weight + 1.8 * height - 4.7 * age
+      : 66 + 13.7 * weight + 5 * height - 6.8 * age
   );
   const maintenance = Math.round(tmb * Number(activityLevel));
   const loseWeight = maintenance - 300;
@@ -45,33 +42,42 @@ function handleSubmit(event) {
   </div>
   `;
 
-  const result = document.getElementById('result');
+  const result = document.getElementById("result");
   result.innerHTML = layout;
   saveName();
   tips();
 }
 
-let recomendaciones = document.getElementById("recomendaciones")
+let recomendaciones = document.getElementById("recomendaciones");
 
-
-const weightLossMacros = { proteina: "2.5-3g por kg de peso corporal,", grasas: "minimo 1g por kg de peso corporal", hidratos: "una vez definida la proteina y la grasa, las kcal restantes pueden provenir de CARBOHIDRATOS."}
+const weightLossMacros = {
+  proteina: "2.5-3g por kg de peso corporal,",
+  grasas: "minimo 1g por kg de peso corporal",
+  hidratos:
+    "una vez definida la proteina y la grasa, las kcal restantes pueden provenir de CARBOHIDRATOS.",
+};
 localStorage.setItem("weightLossMacros", JSON.stringify(weightLossMacros));
 
-function saveName(){
-    localStorage.setItem('usuario', document.getElementById('nombre').value); 
+function saveName() {
+  localStorage.setItem("usuario", document.getElementById("nombre").value);
 }
 
-function tips(){
-    
-    var macros =  localStorage.getItem('weightLossMacros')
-    var user = localStorage.getItem('usuario')
-    macros = JSON.parse(macros)
-    return recomendaciones.innerHTML = user.toUpperCase() + ', nuestra recomendacion de macros es la siguiente: PROTEINA ' + macros.proteina + ' de GRASAS ' + macros.grasas + ' y ' + macros.hidratos
-  }
-
+function tips() {
+  var macros = localStorage.getItem("weightLossMacros");
+  var user = localStorage.getItem("usuario");
+  macros = JSON.parse(macros);
+  return (recomendaciones.innerHTML =
+    user.toUpperCase() +
+    ", nuestra recomendacion de macros es la siguiente: PROTEINA " +
+    macros.proteina +
+    " de GRASAS " +
+    macros.grasas +
+    " y " +
+    macros.hidratos);
+}
 
 function getSelectedValue(id) {
-  const select = document.getElementById(id)
+  const select = document.getElementById(id);
   return select.options[select.selectedIndex].value;
 }
 
@@ -79,3 +85,19 @@ function getInputNumberValue(id) {
   return Number(document.getElementById(id).value);
 }
 
+let ejerciciosRecomendados = document.getElementById("ejerciciosRecomendados");
+
+const ejRecomendado = `<h4> Recomendamos enfatizar los siguientes ejercicios: </h4>`;
+
+fetch("./exercises.json")
+  .then((response) => response.json())
+  .then(
+    (ejercicio) =>
+      (ejerciciosRecomendados.innerHTML =
+        ejRecomendado +
+        JSON.stringify(ejercicio[0].nombre) + ", " +
+        JSON.stringify(ejercicio[1].nombre) + ", " +
+        JSON.stringify(ejercicio[2].nombre) + ", " +
+        JSON.stringify(ejercicio[3].nombre) + " y " +
+        JSON.stringify(ejercicio[4].nombre))
+  );
