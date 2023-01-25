@@ -2,26 +2,26 @@
     {
         "id":1,
         "nombre":"Press Banca",
-        "musculo": "Pecho - Hombro - Triceps"
+        "musculo": "-Pecho - Hombro"
     },
     {
         "id":2,
         "nombre":"Peso Muerto",
-        "musculo": "Gluteos - Femoral - Erectores espinales"
+        "musculo": "-Gluteos - Femoral"
     },
     {
         "id":3,
         "nombre":"Sentadilla",
-        "musculo": "Gluteos - Cuadriceps"
+        "musculo": "-Gluteos - Cuadriceps"
     },
     {
         "id":4,
         "nombre":"Press Militar",
-        "musculo": "Trapecio - Hombro - Triceps"
+        "musculo": "-Hombro - Triceps"
     }, 
     {
         "id":5,
         "nombre":"Dominadas",
-        "musculo": "Espalda - Biceps"
+        "musculo": "-Espalda - Biceps"
     }
 ]

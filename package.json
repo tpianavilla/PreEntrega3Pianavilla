@@ -17,9 +17,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tpianavilla/SegundaEntrega-Pianavilla/issues"
+    "url": " https://tpianavilla.github.io/ProyectoFinalPianavilla/issues"
   },
-  "homepage": "https://github.com/tpianavilla/SegundaEntrega-Pianavilla#readme",
+  "homepage": " https://tpianavilla.github.io/ProyectoFinalPianavilla#readme",
   "devDependencies": {
     "node-sass": "^7.0.3",
     "nodemon": "^2.0.20"

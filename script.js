@@ -1,26 +1,28 @@
 const form = document.getElementById("form");
-
 form.addEventListener("submit", handleSubmit);
+
+const inputs = ["gender", "age", "weight", "height", "activity_level"];
 
 function handleSubmit(event) {
   event.preventDefault();
+  if (document.getElementById("nombre").value !== "") {
+    saveName();
+    tips();
+    helloUser();
 
-  let gender = getInputNumberValue("gender");
-  let age = getInputNumberValue("age");
-  let weight = getInputNumberValue("weight");
-  let height = getInputNumberValue("height");
-  let activityLevel = getInputNumberValue("activity_level");
+    const inputValues = inputs.map(getInputNumberValue);
+    const [gender, age, weight, height, activityLevel] = inputValues;
 
-  const tmb = Math.round(
-    gender === "female"
-      ? 655 + 9.6 * weight + 1.8 * height - 4.7 * age
-      : 66 + 13.7 * weight + 5 * height - 6.8 * age
-  );
-  const maintenance = Math.round(tmb * Number(activityLevel));
-  const loseWeight = maintenance - 300;
-  const gainWeight = maintenance + 400;
+    const tmb = Math.round(
+      gender === "female"
+        ? 655 + 9.6 * weight + 1.8 * height - 4.7 * age
+        : 66 + 13.7 * weight + 5 * height - 6.8 * age
+    );
+    const maintenance = Math.round(tmb * Number(activityLevel));
+    const loseWeight = maintenance - 300;
+    const gainWeight = maintenance + 400;
 
-  const layout = `
+    const layout = `
   
   <h4>Resultados</h4>
   
@@ -42,20 +44,28 @@ function handleSubmit(event) {
   </div>
   `;
 
-  const result = document.getElementById("result");
-  result.innerHTML = layout;
+    const result = document.getElementById("result");
+    result.innerHTML = layout;
 
-  saveName();
+    function getInputNumberValue(id) {
+      return Number(document.getElementById(id).value);
+    }
+  } else {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false,
+    });
 
-  tips();
-
-  if (weight < 0 || height < 0 || age < 0) {
-    Swal.fire({
-      icon: "error",
+    swalWithBootstrapButtons.fire({
       title: "Error",
-      text: "Algun valor de los ingresados es incorrecto.",
-      footer:
-        "Peso, edad y altura deben ser ingresados como un numero mayor a 0.",
+      text: "Debe ingresar un nombre",
+      icon: "error",
+      confirmButtonText: "OK",
+      confirmButtonColor: "#ffc107",
+      showCancelButton: false,
     });
   }
 }
@@ -63,10 +73,9 @@ function handleSubmit(event) {
 let recomendaciones = document.getElementById("recomendaciones");
 
 const weightLossMacros = {
-  proteina: "2.5-3g por kg de peso corporal,",
-  grasas: "minimo 1g por kg de peso corporal",
-  hidratos:
-    "una vez definida la proteina y la grasa, las kcal restantes pueden provenir de CARBOHIDRATOS.",
+  proteina: "2.5-3g por kg de peso corporal.",
+  grasas: "1g por kg de peso corporal.",
+  hidratos: "3-5g por kg de peso corporal.",
 };
 localStorage.setItem("weightLossMacros", JSON.stringify(weightLossMacros));
 
@@ -76,18 +85,22 @@ function saveName() {
 
 function tips() {
   var macros = localStorage.getItem("weightLossMacros");
-  var user = localStorage.getItem("usuario");
+
   macros = JSON.parse(macros);
   return (recomendaciones.innerHTML =
-    user.toUpperCase() +
-    ", nuestra recomendacion de macros es la siguiente: PROTEINA " +
+    "<table> <tr> <th>Macronutriente</th> <th>Recomendacion</th> </tr> <tr> <td>Proteina</td> <td>" +
     macros.proteina +
-    " de GRASAS " +
+    "</td> </tr> <tr> <td>Grasa</td> <td>" +
     macros.grasas +
-    " y " +
-    macros.hidratos);
+    "</td> </tr> <tr> <td>Carbohidratos</td> <td>" +
+    macros.hidratos +
+    "</td> </tr> </table>");
 }
-
+function helloUser() {
+  var user = localStorage.getItem("usuario");
+  var element = document.getElementById("helloUser");
+  element.innerHTML = "Te agradecemos por tu visita, " + user.toUpperCase();
+}
 function getSelectedValue(id) {
   const select = document.getElementById(id);
   return select.options[select.selectedIndex].value;
@@ -103,17 +116,47 @@ const ejRecomendado = `<h4> Recomendamos enfatizar los siguientes ejercicios: </
 
 fetch("./exercises.json")
   .then((response) => response.json())
-  .then(
-    (ejercicio) =>
-      (ejerciciosRecomendados.innerHTML =
-        ejRecomendado +
-        JSON.stringify(ejercicio[0].nombre) +
-        ", " +
-        JSON.stringify(ejercicio[1].nombre) +
-        ", " +
-        JSON.stringify(ejercicio[2].nombre) +
-        ", " +
-        JSON.stringify(ejercicio[3].nombre) +
-        " y " +
-        JSON.stringify(ejercicio[4].nombre))
+  .then((ejercicios) => {
+    let table = document.createElement("table");
+    let thead = document.createElement("thead");
+    let tbody = document.createElement("tbody");
+    let headRow = document.createElement("tr");
+    let th1 = document.createElement("th");
+    let th2 = document.createElement("th");
+    th1.innerHTML = "Nombre";
+    th2.innerHTML = "Músculo";
+    headRow.appendChild(th1);
+    headRow.appendChild(th2);
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+    ejercicios.forEach((ejercicio) => {
+      let row = document.createElement("tr");
+      let td1 = document.createElement("td");
+      let td2 = document.createElement("td");
+      td1.innerHTML = ejercicio.nombre;
+      td2.innerHTML = ejercicio.musculo;
+      row.appendChild(td1);
+      row.appendChild(td2);
+      tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+    ejerciciosRecomendados.appendChild(table);
+  });
+
+async function fetchImage() {
+  const apiKey = "fErsix4AWVw0xukBFBl60eDtCoXJWsdwowEo8IiSQBZBleDuMgNh3JYk";
+  const query = "fitness";
+  const response = await fetch(
+    `https://api.pexels.com/v1/search?query=${query}&per_page=1&page=1`,
+    {
+      headers: {
+        Authorization: apiKey,
+      },
+    }
   );
+  const data = await response.json();
+  const imageUrl = data.photos[0].src.medium;
+  const imageAPI = document.getElementById("imagenAPI");
+  imageAPI.innerHTML = `<img src="${imageUrl}" alt="Fitness Image">`;
+}
+fetchImage();

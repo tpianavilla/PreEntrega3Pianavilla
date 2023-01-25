@@ -1,7 +1,11 @@
 $color-hover:grey;
 $background-alternativo: rgb(62,62,62);
 $color-texto: white;
+$table-border-spacing: 15px;
 
+table {
+    border-spacing: $table-border-spacing;
+}
 body { 
     font-family: 'Roboto Condensed', sans-serif !important;
     font-size: larger !important;

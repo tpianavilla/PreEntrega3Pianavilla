@@ -1,3 +1,6 @@
+table {
+  border-spacing: 15px; }
+
 body {
   font-family: 'Roboto Condensed', sans-serif !important;
   font-size: larger !important;
